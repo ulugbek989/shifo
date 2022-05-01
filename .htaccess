@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+
+
+
+#    RewriteBase /blog/
+#    # Handle Front Controller...
+#    RewriteCond %{REQUEST_FILENAME} !-d
+#    RewriteCond %{REQUEST_FILENAME} !-f
+#    RewriteRule ^(.*)$ index.php/$1 [L]
+
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ /public/$1 [L,QSA]
+
+</IfModule>
